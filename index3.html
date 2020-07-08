@@ -35,34 +35,39 @@
       </nav>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-
-              <form>
+            <div class="col-sm-6">
+              <form autocomplete="off" action="/action_page.php">
                 <div class="form-group">
                   <ul class="list-group" id="filters">
                     <li class="filter list-group-item">
-                      <label for="date">Facility</label>
-                      <input class="form-control" id="facility" type="text" placeholder="MAGGIANO'S LITTLE ITALY">
+                      <label for="facility">Facility</label>
+                        <div class="autocomplete" style="width:300px;height:50px;">
+                          <input class="form-control" id="facility" type="text" placeholder="MAGGIANO'S LITTLE ITALY">
+                        </div>
+                       
+                      <label for="location">Location</label>
+                        <div class="autocomplete" style="width:300px;">
+                          <input class="form-control" id="location" type="text" placeholder="516 N CLARK ST">
+                        </div>
+                      <button id="filter-btn" type="button" class="btn btn-default">Enter</button>
                     </li>
                   </ul>
                 </div>
-                <div class="form-group">
-                  <ul class="list-group" id="filters">
-                    <li class="filter list-group-item">
-                      <label for="date">Location</label>
-                      <input class="form-control" id="location" type="text" placeholder="">
-                    </li>
-                  </ul>
-                </div>
-                <button id="filter-btn" type="button" class="btn btn-default">Enter</button>
-              </form>
-                    <div class="col-md-12">
-                      <div id="bar"></div>
-                    </div>
-                </form>
+            </form>
             </div>
+              <div class="col-sm-6 jumbotron text-center">
+                <h5 class="header">Inspection details</h5>
+                <div id="sample-metadata" class="panel-body"></div>
+              </div>
+              <div id ="pie-chart" class="col-lg-12">
+                <div id="pie"></div>
+              </div>
+              <div class="col-lg-12">
+                <div id="bar"></div>
+              </div>
+          </div>
         </div>
-    </div>  
+      </div>  
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
