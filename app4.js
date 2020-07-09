@@ -37,12 +37,10 @@ d3.csv("./new_restaurants_pd.csv").then(function(tableData) {
         newaddresslist.push(filterbizzaddress)
         }
       });
-
-      truenewaddresslist = []
+      truenewaddresslist = ["Choose...", ]
       $.each(newaddresslist, function(i, el){
         if($.inArray(el, truenewaddresslist) === -1) truenewaddresslist.push(el);
       });
-      
       var filteredaddresslistoptions = truenewaddresslist
       for(var i = 0; i < filteredaddresslistoptions.length; i++) {
         var opt = filteredaddresslistoptions[i];
