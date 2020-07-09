@@ -42,7 +42,7 @@
                     <li class="filter list-group-item">
                       <label for="facility">Facility</label>
                         <div class="autocomplete" style="width:300px;height:50px;">
-                          <input class="form-control" id="facility" type="text" placeholder="MAGGIANO'S LITTLE ITALY">
+                          <input class="form-control" id="facility" type="text" placeholder="Maggiano's little Italy">
                         </div>
                        
                       <label for="location">Location</label>
@@ -50,12 +50,13 @@
                           <input class="form-control" id="location" type="text" placeholder="516 N CLARK ST">
                         </div>
                       <button id="filter-btn" type="button" class="btn btn-default">Enter</button>
+                      <button id="reset-btn" type="button" class="btn btn-default">Reset</button>
                     </li>
                   </ul>
                 </div>
             </form>
             </div>
-              <div class="col-sm-6 jumbotron text-center">
+              <div id= "inspection-details", class="col-sm-6 jumbotron text-center">
                 <h5 class="header">Inspection details</h5>
                 <div id="sample-metadata" class="panel-body"></div>
               </div>
