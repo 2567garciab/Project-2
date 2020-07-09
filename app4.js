@@ -3,7 +3,6 @@ d3.csv("./new_restaurants_pd.csv").then(function(tableData) {
 
   //Create Dropdown Arrays
   bizzNameList = []
-  //zipCodeList = []
   addressList = []
   tableData.forEach(function(inspection) {
     bizzNameList.push(inspection.AKA_name)
@@ -23,16 +22,36 @@ d3.csv("./new_restaurants_pd.csv").then(function(tableData) {
   };
 
 
-  //Fill in Address dropdown
-  var addresslistselect = document.getElementById("inputAddress");
-  var addresslistoptions = addressList
-  for(var i = 0; i < addresslistoptions.length; i++) {
-    var opt = addresslistoptions[i];
-    var el = document.createElement("option");
-    el.textContent = opt;
-    el.value = opt;
-    addresslistselect.appendChild(el);
-  };
+  //Filter address list upon business selection
+  d3.select('#inputBizz').on('change', function() {
+    var newbizzElement = d3.select("#inputBizz");
+    var newbizzValue = newbizzElement.property("value");
+    var grabaddresslist = document.getElementById("inputAddress");
+    (grabaddresslist.innerHTML = "")
+    
+      newaddresslist = []
+      tableData.forEach(function(filter){
+      filterbizzname = filter.AKA_name
+      filterbizzaddress = filter.Address
+      if (newbizzValue === filterbizzname) {
+        newaddresslist.push(filterbizzaddress)
+        }
+      });
+
+      truenewaddresslist = []
+      $.each(newaddresslist, function(i, el){
+        if($.inArray(el, truenewaddresslist) === -1) truenewaddresslist.push(el);
+      });
+      
+      var filteredaddresslistoptions = truenewaddresslist
+      for(var i = 0; i < filteredaddresslistoptions.length; i++) {
+        var opt = filteredaddresslistoptions[i];
+        var el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        grabaddresslist.appendChild(el);
+      }
+  });
 
 
   //Function for starting Javascript after submission
@@ -42,6 +61,7 @@ d3.csv("./new_restaurants_pd.csv").then(function(tableData) {
     runValue();
     console.log(inputBizzsubmit);
     };
+
 
   //Populate table based on dropdown submissions
   function runValue() {
@@ -69,20 +89,13 @@ d3.csv("./new_restaurants_pd.csv").then(function(tableData) {
             var cell = row.append("td");
             cell.text(value)
       })}
-      else if (bv === "Choose..." && av === bizzaddress) {
+      else if (bv === akaname && av === bizzaddress) {
         var row = tbody.append("tr");
         Object.entries(tableinfoentry).forEach(function([key, value]) {
             console.log(key, value);
             var cell = row.append("td");
             cell.text(value);
-      })}
-      else if (bv === bizzValue && av === bizzaddress) {
-        var row = tbody.append("tr");
-        Object.entries(tableinfoentry).forEach(function([key, value]) {
-            console.log(key, value);
-            var cell = row.append("td");
-            cell.text(value);
-      })}
+      })};
     });
   };
 

@@ -14,3 +14,7 @@
 #violation_table {
   padding-top: 60px;
 }
+
+td {
+  font-size: 12px;
+}
