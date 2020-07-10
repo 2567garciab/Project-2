@@ -2,9 +2,14 @@
 var risk = [];
 var inspectionYear = [];
 var result = [];
+
 // Define button
 var button = d3.select("button#filter-btn");
 var resetButton = d3.select("button#reset-btn");
+
+// Define form
+var form = d3.select("#form");
+
 // Define dropdown
 var dropdown = d3.select("#selDataset");
 // Define function to convert results into numeric
@@ -127,7 +132,10 @@ function filterFunction(data) {
 d3.csv("./updated_three_years.csv").then(function (data) {
   var filteredFacility;
   console.log(data);
+  
+  
   button.on("click", handleChange);
+  form.on("submit", handleChange)
 
   // creating the function handleChange
   function handleChange() {
