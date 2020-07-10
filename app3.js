@@ -145,7 +145,7 @@ d3.csv("./updated_three_years.csv").then(function (data){
         filterFunction(filteredFacility)
         // filtering by location and dropping duplicates
         var filteredLocation = filteredFacility.map(d => d.Address)
-        var uniqueLocation = [];
+        var uniqueLocation = ["Choose...", ];
         $.each(filteredLocation, function(i, el){
             if($.inArray(el, uniqueLocation) === -1) uniqueLocation.push(el);
         });
