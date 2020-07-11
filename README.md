@@ -1,6 +1,6 @@
 # Project-2
 
-Theme: Chicago food inspections
+Theme: Chicago Food Inspections
 
 Data Source: https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5/data
 
