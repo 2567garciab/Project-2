@@ -97,7 +97,8 @@ function filterFunction(data) {
       "<b> Inspection status as a percentage of the number of inspections </b>",
     height: 450,
     width: 750,
-    margin: { t: 100, b: 10, l: 300, r: 0 },
+    paper_bgcolor: "rgba(0,0,0,0)",
+    margin: { t: 100, b: 10, l: 300, r: 0 }
   };
   Plotly.newPlot("pie", [trace1], layout1);
   // Create trace
@@ -121,6 +122,7 @@ function filterFunction(data) {
       title: "Violations",
       range: [0, 3],
     },
+    paper_bgcolor: "rgba(0,0,0,0)",
     font: {
       family: "Raleway, sans-serif",
     },

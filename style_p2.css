@@ -9,7 +9,7 @@ body {
   }
   
   #map{
-      height: 550px;
+      height: 580px;
       width: 800px;
   }
   
@@ -46,9 +46,9 @@ body {
     float: right;
   }
   
-  h1 {
+  /* h1 {
     text-align: center;
-  }
+  } */
   
   .leaflet-bottom.leaflet-left{
     width: 100%;
