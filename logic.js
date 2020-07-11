@@ -43,7 +43,7 @@ var myMap = L.map("map", {
         // Add a new marker to the cluster group and bind a pop-up
         markers.addLayer(L.marker(
           [+location.latitude, +location.longitude]) //long and lat need to be numbers, not strings
-          .bindPopup(response[i].facility_type));
+          .bindPopup(response[i].aka_name));
       }
       
   

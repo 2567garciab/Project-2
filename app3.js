@@ -98,7 +98,7 @@ function filterFunction(data) {
     height: 450,
     width: 750,
     paper_bgcolor: "rgba(0,0,0,0)",
-    margin: { t: 100, b: 10, l: 300, r: 0 }
+    margin: { t: 100, b: 10, l: 300, r: 0 },
   };
   Plotly.newPlot("pie", [trace1], layout1);
   // Create trace
@@ -134,10 +134,9 @@ function filterFunction(data) {
 d3.csv("./updated_three_years.csv").then(function (data) {
   var filteredFacility;
   console.log(data);
-  
-  
+
   button.on("click", handleChange);
-  form.on("submit", handleChange)
+  form.on("submit", handleChange);
 
   // creating the function handleChange
   function handleChange() {
@@ -152,7 +151,7 @@ d3.csv("./updated_three_years.csv").then(function (data) {
     // select input field
     var facilityInputField = d3.select("input#facility");
     var facilityInputValue = facilityInputField.property("value");
-    submit(facilityInputValue);
+    submit(facilityInputValue, "ALL");
     console.log(facilityInputValue);
     // filter data by facility using filterFunction: Modified to accept partial queries
     filteredFacility = data.filter((d) =>
@@ -181,6 +180,8 @@ d3.csv("./updated_three_years.csv").then(function (data) {
     );
     console.log(test);
     filterFunction(test);
+    var facilityInputField = d3.select("input#facility");
+    var facilityInputValue = facilityInputField.property("value");
     submit(facilityInputValue, dropdown.property("value").trim());
   });
 });

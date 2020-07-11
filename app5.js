@@ -39,17 +39,19 @@ async function chartIt(name, address) {
 }
 
 async function getData(name, address) {
+  console.log(address);
   const data = await d3.csv("restaurants_all_years_results.csv");
-
+  console.log(data);
   return data.reduce(
     (acc, item) => {
       if (
         item["AKA Name"].toLocaleLowerCase().includes(name.toLocaleLowerCase())
       ) {
-        if (address && address.trim() === item["Address"]) {
-          acc.ys.push(item["Results"]);
-          acc.xs.push(item["Inspection Date"]);
-        } else {
+        if (
+          address &&
+          (address === "ALL" || address.trim() === item["Address"].trim())
+        ) {
+          console.log(item);
           acc.ys.push(item["Results"]);
           acc.xs.push(item["Inspection Date"]);
         }
