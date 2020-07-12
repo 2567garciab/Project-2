@@ -70,7 +70,7 @@
     </nav>
     <div class="container">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-lg-12">
           <form id="form">
             <div class="form-group">
               <ul class="list-group" id="filters">
@@ -101,7 +101,7 @@
                       onclick="clear()"
                     >
                       Reset
-                    </button>
+                    </button> 
                   </div>
 
                   <label for="location"><b>Pick an address</b></label>
@@ -113,10 +113,25 @@
             </div>
           </form>
         </div>
-        <div id="inspection-details" , class="col-sm-6 jumbotron text-center">
+
+        <div class="card" style="width: 30rem;">
+          <div class="card-body">
+            <h5 class="card-title">Score Scale </h5>
+            <p class="card-text">Conversion of non-numeric data to numeric values for plotting</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Pass: Score 1 </li>
+            <li class="list-group-item">Pass w/conditions: Score 2</li>
+            <li class="list-group-item">Fail: Score 3</li>
+          </ul>
+        </div>
+
+        <div id="inspection-details" , class="col-sm-6 jumbotron text-center", style="height: 20rem">
           <h5 class="header">Inspection details</h5>
           <div id="sample-metadata" class="panel-body"></div>
         </div>
+
+      </div>
         <div class="row">
           <div id="pie-chart" class="col-lg-12">
             <div id="pie"></div>
@@ -124,7 +139,7 @@
           <div class="col-lg-12">
             <div id="bar"></div>
           </div>
-        </div>
+
         <canvas id="myChart" width="300" height="100"></canvas>
       </div>
     </div>
